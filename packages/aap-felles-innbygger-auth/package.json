@@ -1,0 +1,30 @@
+{
+    "version": "4.0.5",
+    "name": "@navikt/aap-felles-inbygger-auth",
+    "author": "NAV",
+    "homepage": "https://github.com/navikt/aap-felles-innbygger#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/navikt/aap-felles-innbygger"
+    },
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "module": "dist/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "npm run clean && yarn run tsc",
+        "clean": "rm -rf ./dist",
+        "tsc": "tsc -p tsconfig.json"
+    },
+    "dependencies": {
+        "next": "12.3.1",
+        "openid-client": "5.1.10",
+        "jose": "4.10.0"
+    }
+}
