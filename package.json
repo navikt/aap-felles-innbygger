@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "lerna run build --verbose",
+    "build": "lerna run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
     "publish:ci": "lerna publish -y --no-verify-access"
   },
   "repository": {
@@ -32,7 +31,6 @@
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
-    "gh-pages": "^4.0.0",
     "lerna": "^5.6.1"
   },
   "dependencies": {
