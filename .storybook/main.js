@@ -1,8 +1,7 @@
 module.exports = {
   stories: [
-    "../packages/Button/**/*.stories.mdx",
-    "../packages/Button/button.stories.jsx",
-    "../packages/Button/**/*.stories.@(js|jsx|ts|tsx)",
+    "../packages/aap-felles-innbygger-react/**/*.stories.mdx",
+    "../packages/aap-felles-innbygger-react/**/*.stories.tsx",
   ],
   addons: [
     "@storybook/addon-links",
