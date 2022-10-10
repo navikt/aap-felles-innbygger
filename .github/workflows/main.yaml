@@ -16,13 +16,15 @@ jobs:
         with:
           node-version: "16"
           registry-url: "https://npm.pkg.github.com"
+      - name: "install dependencies"
+        run: "npm install"
+        env:
+          NODE_AUTH_TOKEN: "${{ secrets.READER_TOKEN }}"
       - name: "Login to GitHub Docker Registry"
         uses: "docker/login-action@v1"
         with:
           "registry": "ghcr.io"
           "username": "${{ github.actor }}"
           "password": "${{ secrets.GITHUB_TOKEN }}"
-      - name: "install dependencies"
-        run: "npm install"
       - name: "Deploy storybook"
         run: "npm deploy-storybook"
