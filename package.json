@@ -8,6 +8,7 @@
     "build": "lerna run build --verbose",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
     "publish:ci": "lerna publish -y --no-verify-access"
   },
   "repository": {
@@ -20,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/navikt/aap-felles-innbygger/issues"
   },
-  "homepage": "https://github.com/navikt/aap-felles-innbygger#readme",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@storybook/addon-actions": "^6.5.12",
@@ -32,6 +32,7 @@
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
+    "gh-pages": "^4.0.0",
     "lerna": "^5.6.1"
   },
   "dependencies": {

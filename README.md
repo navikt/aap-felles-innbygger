@@ -6,8 +6,8 @@ npm run storybook
 ```
 Legg til dependency i riktig workspace(riktig package.json). Eksempler:
 ```
-npm install @navikt/ds-css -w aap-felles-innbygger-react
-npm install pino -w aap-felles-innbygger-utils
+npm install @navikt/ds-css -w "@navikt/aap-felles-innbygger-react"
+npm install pino -w "@navikt/aap-felles-innbygger-utils"
 ```
 ## aap-felles-innbygger-auth
 Felles funksjoner som brukes til å logge inn og autentisere med idporten

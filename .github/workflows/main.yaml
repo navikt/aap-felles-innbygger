@@ -1,0 +1,21 @@
+name: "Build and deploy aap-soknad-next"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+env:
+  "IMAGE": "ghcr.io/${{ github.repository }}:${{ github.sha }}"
+jobs:
+  "build":
+    name: "build"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-node@v2"
+        with:
+          node-version: "16"
+      - name: "install dependencies"
+        run: "npm install"
+      - name: "Deploy storybook"
+        run: "npm deploy-storybook"
