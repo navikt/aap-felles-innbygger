@@ -1,6 +1,6 @@
 {
     "version": "4.0.5",
-    "name": "@navikt/aap-felles-inbygger-form",
+    "name": "@navikt/aap-felles-inbygger-react",
     "author": "NAV",
     "homepage": "https://github.com/navikt/aap-felles-innbygger#readme",
     "repository": {
