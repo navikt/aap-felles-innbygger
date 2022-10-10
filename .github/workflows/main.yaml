@@ -24,5 +24,7 @@ jobs:
           "password": "${{ secrets.GITHUB_TOKEN }}"
       - name: "install dependencies"
         run: "npm install"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: "Deploy storybook"
         run: "npm deploy-storybook"
