@@ -4,3 +4,4 @@ node_modules
 dist
 storybook-static
 lerna-debug.log
+.npmrc
