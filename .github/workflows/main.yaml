@@ -45,6 +45,8 @@ jobs:
 #        env:
 #          AUTH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
       - name: "Push"
-        run: "npm run publish:ci"
+        run: |
+          npm run version:patch
+          npm run publish:ci
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
