@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.11 (2022-10-11)
+
+**Note:** Version bump only for package @navikt/aap-felles-innbygger-auth
+
 ## 0.0.10 (2022-10-11)
 
 **Note:** Version bump only for package @navikt/aap-felles-innbygger-auth
