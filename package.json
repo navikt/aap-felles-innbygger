@@ -8,7 +8,8 @@
     "build": "lerna run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "publish:ci": "lerna version patch && lerna publish -y --no-verify-access"
+    "lerna:version": "lerna version patch",
+    "publish:ci": "lerna:version && lerna publish -y --no-verify-access"
   },
   "repository": {
     "type": "git",
