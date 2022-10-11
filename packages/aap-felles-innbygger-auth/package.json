@@ -1,6 +1,6 @@
 {
     "version": "0.0.1",
-    "name": "@navikt/aap-felles-inbygger-auth",
+    "name": "@navikt/aap-felles-innbygger-auth",
     "author": "NAV",
     "homepage": "https://github.com/navikt/aap-felles-innbygger#readme",
     "repository": {
