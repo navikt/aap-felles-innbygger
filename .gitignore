@@ -5,3 +5,6 @@ dist
 storybook-static
 lerna-debug.log
 .npmrc
+
+cjs/
+esm/
