@@ -26,13 +26,25 @@ jobs:
         run: "npm run build-storybook"
       - name: "build packages"
         run: "npm run build"
-      - name: "Login to GitHub Docker Registry"
-        uses: "docker/login-action@v1"
-        with:
-          "registry": "ghcr.io"
-          "username": "${{ github.actor }}"
-          "password": "${{ secrets.GITHUB_TOKEN }}"
       - name: "Deploy storybook"
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: storybook-static # The folder the action should deploy.
+#      - name: "Login"
+#      run: |
+#        git config user.email "aap-innbygger@nav.no"
+#        git config user.name "Team Innbygger"
+#        git remote set-url origin https://github-actions[bot]:$GITHUB_TOKEN@github.com/navikt/aap-felles-innbygger.git
+#      env:
+#        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+#      - name: "Create a .npmrc file for the github package repository"
+#        uses: "FerLuisxd/create-npmrc@3"
+#        with:
+#          org_name: "navikt"
+#        env:
+#          AUTH_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+#
+#      - name: "Push"
+#        run: "npm run publish"
+#        env:
+#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
