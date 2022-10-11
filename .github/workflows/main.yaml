@@ -35,7 +35,7 @@ jobs:
           git config user.email "aap-innbygger@nav.no"
           git config user.name "Team Innbygger"
           git remote set-url origin https://github-actions[bot]:$GITHUB_TOKEN@github.com/navikt/aap-felles-innbygger.git
-          git fetch
+          git fetch https://github-actions[bot]:$GITHUB_TOKEN@github.com/navikt/aap-felles-innbygger.git
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - name: "Create a .npmrc file for the github package repository"
