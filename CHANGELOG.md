@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.9 (2022-10-11)
+
+**Note:** Version bump only for package aap-felles-innbygger
+
 ## 0.0.8 (2022-10-11)
 
 **Note:** Version bump only for package aap-felles-innbygger
