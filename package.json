@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "version:patch": "lerna version patch --yes",
-    "publish:ci": " lerna publish from-package --yes"
+    "publish:ci": " lerna publish --registry https://npm.pkg.github.com from-package --yes"
   },
   "repository": {
     "type": "git",
