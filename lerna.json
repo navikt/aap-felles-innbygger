@@ -9,7 +9,7 @@
       "registry": "https://npm.pkg.github.com",
       "conventionalCommits": true,
       "ignoreChanges": ["ignored-file", "*.{md|mdx}"],
-      "message": "chore(release): publish"
+      "message": ":money_with_wings: publish %s"
     }
   }
 }
