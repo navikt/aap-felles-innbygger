@@ -38,7 +38,7 @@ async function client() {
   return _client;
 }
 
-export async function getTokenXToken(
+export async function getTokenX(
   subject_token: string,
   audience: string
 ): Promise<string | undefined> {
