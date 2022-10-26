@@ -3,11 +3,12 @@ import { Alert, BodyLong, BodyShort, Heading, Label } from '@navikt/ds-react';
 import ScanningIcon from './ScanningIcon';
 import { Error, Success } from '@navikt/ds-icons';
 import './ScanningGuide.css';
-import nn from './nb.json'
-import nb from './nb.json'
-interface Props {
+import * as nn from './nn.json'
+import * as nb from './nb.json'
+
+type Props = {
   className?: string;
-  locale?: 'nb' | 'nn'
+  locale?: string;
 }
 
 export const ScanningGuide = ({ className, locale = 'nb' }: Props) => {
