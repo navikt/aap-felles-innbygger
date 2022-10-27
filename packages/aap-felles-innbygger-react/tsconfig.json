@@ -4,9 +4,7 @@
   "compilerOptions": {
     "outDir": "./cjs",
     "module": "commonjs",
-    "jsx": "react-jsx",
     "noImplicitAny": false,
-    "moduleResolution": "node",
     "resolveJsonModule": true
   },
   "exclude": ["node_modules", "cjs", "esm", "**/*.stories.tsx"]
