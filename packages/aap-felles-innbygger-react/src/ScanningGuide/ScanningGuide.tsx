@@ -6,12 +6,12 @@ import './ScanningGuide.css';
 import * as nn from './nn.json'
 import * as nb from './nb.json'
 
-type Props = {
+interface ScanningGuideProps {
   className?: string;
   locale?: string;
 }
 
-export const ScanningGuide = ({ className, locale = 'nb' }: Props) => {
+export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) => {
 
   const tekster = useMemo(() => {
     switch(locale) {
