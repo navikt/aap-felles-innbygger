@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import React, {useMemo} from 'react';
 import { Alert, BodyLong, BodyShort, Heading, Label } from '@navikt/ds-react';
 import ScanningIcon from './ScanningIcon';
 import { Error, Success } from '@navikt/ds-icons';

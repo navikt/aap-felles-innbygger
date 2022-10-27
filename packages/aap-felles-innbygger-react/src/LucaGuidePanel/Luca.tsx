@@ -1,5 +1,5 @@
+import React from "react";
 /* eslint-disable max-len */
-
 export const Luca = () => {
   return (
     <svg
