@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import { Alert, BodyLong, BodyShort, Heading, Label } from '@navikt/ds-react';
+import { Alert, BodyShort, Heading, Label } from '@navikt/ds-react';
 import ScanningIcon from './ScanningIcon';
 import { Error, Success } from '@navikt/ds-icons';
 import * as nn from './nn.json'
@@ -26,7 +26,6 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
         <Heading size={'medium'} level={'2'}>
           {tekster?.alert?.takePictureTitle}
         </Heading>
-        <BodyLong>
           <ul>
             <li>
               {tekster?.alert?.bulletPointTakePicture1}
@@ -38,11 +37,9 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
               {tekster?.alert?.bulletPointTakePicture3}
             </li>
           </ul>
-        </BodyLong>
         <Heading size={'medium'} level={'2'}>
           {tekster?.alert?.checkPictureTitle}
         </Heading>
-        <BodyLong>
           <ul>
             <li>
               {tekster?.alert?.bulletPointCheckPicture1}
@@ -51,10 +48,9 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
               {tekster?.alert?.bulletPointCheckPicture2}
             </li>
             <li>
-              {tekster?.alert.bulletPointCheckPicture3}
+              {tekster?.alert?.bulletPointCheckPicture3}
             </li>
           </ul>
-        </BodyLong>
         <Heading size={'medium'} level={'2'}>
           {tekster?.alert?.examplesPicturesTitle}
         </Heading>
