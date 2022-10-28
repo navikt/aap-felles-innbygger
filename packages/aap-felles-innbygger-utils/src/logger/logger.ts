@@ -1,7 +1,7 @@
 import pino from 'pino';
 import ecsFormat from '@elastic/ecs-pino-format';
 
-const myEcsFormat = (formatFunc: any) => formatFunc();
+const myEcsFormat = (format: any) => format;
 
 export const logger = pino({
     ...myEcsFormat(ecsFormat()),
