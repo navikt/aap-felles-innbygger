@@ -6,7 +6,7 @@ import './ScanningGuide.css';
 import * as nn from './nn.json'
 import * as nb from './nb.json'
 
-interface ScanningGuideProps {
+export interface ScanningGuideProps {
   className?: string;
   locale?: string;
 }
