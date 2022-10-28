@@ -2,7 +2,6 @@ import React, {useMemo} from 'react';
 import { Alert, BodyLong, BodyShort, Heading, Label } from '@navikt/ds-react';
 import ScanningIcon from './ScanningIcon';
 import { Error, Success } from '@navikt/ds-icons';
-import './ScanningGuide.css';
 import * as nn from './nn.json'
 import * as nb from './nb.json'
 
