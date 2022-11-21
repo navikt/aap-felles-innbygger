@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
 import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
 import axios from 'axios';
-import { getTokenX } from '@navikt/aap-felles-innbygger-auth';
+import { getTokenX } from '../getTokenX';
 import { ErrorMedStatus } from '../lib/ErrorMedStatus';
 import { Counter, Histogram } from 'prom-client';
 import pino from 'pino';
