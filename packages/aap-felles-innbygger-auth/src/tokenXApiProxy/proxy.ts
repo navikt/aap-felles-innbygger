@@ -28,7 +28,7 @@ interface Opts {
   bearerToken?: string;
   metricsTimer?: Histogram;
   metricsStatusCodeCounter?: Counter;
-  logger: Logger;
+  logger: Logger<unknown>;
 }
 
 export const tokenXApiProxy = async (opts: Opts) => {
@@ -108,7 +108,7 @@ interface AxiosOpts {
   bearerToken?: string;
   metricsTimer?: Histogram;
   metricsStatusCodeCounter?: Counter;
-  logger: Logger;
+  logger: Logger<unknown>;
 }
 
 export const tokenXApiStreamProxy = async (opts: AxiosOpts) => {
