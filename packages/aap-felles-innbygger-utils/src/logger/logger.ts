@@ -1,9 +1,9 @@
-import pino from 'pino';
+import pino, { Logger, LoggerOptions } from 'pino';
 import ecsFormat from '@elastic/ecs-pino-format';
 
-const myEcsFormat = (format: any) => format;
+const myEcsFormat = (format: LoggerOptions) => format;
 
-export const logger = pino({
+export const logger: Logger<LoggerOptions> = pino({
     ...myEcsFormat(ecsFormat()),
     formatters: {
         level: (label) => {
