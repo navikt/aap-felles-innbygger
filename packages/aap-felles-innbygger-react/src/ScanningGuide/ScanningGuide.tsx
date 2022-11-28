@@ -62,7 +62,7 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
             title={tekster?.alert?.exampleLabelGood}
           />
           <span className={'scanning-example-status'}>
-            <Success color={'var(--navds-global-color-green-600)'} />
+            <Success color={'var(--a-green-600)'} />
             <Label>
               {tekster?.alert?.exampleLabelGood}
             </Label>
@@ -77,7 +77,7 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
             title={tekster?.alert?.exampleLabelBad}
           />
           <span className={'scanning-example-status'}>
-            <Error color={'var(--navds-global-color-nav-red)'} />
+            <Error color={'var(--a-nav-red)'} />
             <Label>
               {tekster?.alert?.exampleLabelBad}
             </Label>
@@ -92,7 +92,7 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
             title={tekster?.alert?.exampleLabelBad}
           />
           <span className={'scanning-example-status'}>
-            <Error color={'var(--navds-global-color-nav-red)'} />
+            <Error color={'var(--a-nav-red)'} />
             <Label>
               {tekster?.alert?.exampleLabelBad}
             </Label>
@@ -107,7 +107,7 @@ export const ScanningGuide = ({ className, locale = 'nb' }: ScanningGuideProps) 
             title={tekster?.alert?.exampleLabelBad}
           />
           <span className={'scanning-example-status'}>
-            <Error color={'var(--navds-global-color-nav-red)'} />
+            <Error color={'var(--a-nav-red)'} />
             <Label>
               {tekster?.alert?.exampleLabelBad}
             </Label>
