@@ -80,7 +80,7 @@ export const tokenXApiProxy = async (opts: Opts) => {
     }
     if (response.status >= 500 || response.status === 400) {
       opts.logger.error(responseErrorLog);
-    } else {
+    } else if(response.status !== 404) {
       opts.logger.warn(responseErrorLog);
     }
     throw new ErrorMedStatus(
