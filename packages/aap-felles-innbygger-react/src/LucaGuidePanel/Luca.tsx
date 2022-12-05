@@ -3,6 +3,7 @@ import React from "react";
 export const Luca = () => {
   return (
     <svg
+      aria-hidden
       xmlns="http://www.w3.org/2000/svg"
       width="64"
       height="64"
