@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.35 (2022-12-08)
+
+**Note:** Version bump only for package @navikt/aap-felles-innbygger-react
+
 ## 0.0.34 (2022-12-05)
 
 **Note:** Version bump only for package @navikt/aap-felles-innbygger-react
