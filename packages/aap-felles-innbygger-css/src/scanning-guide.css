@@ -27,3 +27,7 @@
   padding: 0rem;
   gap: var(--a-spacing-6);
 }
+
+.scanning-guide ul {
+  margin-top: 0rem;
+}

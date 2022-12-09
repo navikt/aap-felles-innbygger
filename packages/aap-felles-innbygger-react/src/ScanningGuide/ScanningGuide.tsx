@@ -23,9 +23,9 @@ export const ScanningGuide = ({
     }
   }, [locale]);
   return (
-    <div className={className}>
+    <div className={`scanning-guide ${className}`}>
       <article>
-        <Heading size={"medium"} level={"2"}>
+        <Heading size={"small"} level={"3"} spacing>
           {tekster?.alert?.takePictureTitle}
         </Heading>
         <ul>
@@ -33,7 +33,7 @@ export const ScanningGuide = ({
           <li>{tekster?.alert?.bulletPointTakePicture2}</li>
           <li>{tekster?.alert?.bulletPointTakePicture3}</li>
         </ul>
-        <Heading size={"medium"} level={"2"}>
+        <Heading size={"small"} level={"3"} spacing>
           {tekster?.alert?.checkPictureTitle}
         </Heading>
         <ul>
@@ -41,7 +41,7 @@ export const ScanningGuide = ({
           <li>{tekster?.alert?.bulletPointCheckPicture2}</li>
           <li>{tekster?.alert?.bulletPointCheckPicture3}</li>
         </ul>
-        <Heading size={"medium"} level={"2"}>
+        <Heading size={"small"} level={"3"} spacing>
           {tekster?.alert?.examplesPicturesTitle}
         </Heading>
       </article>
