@@ -25,25 +25,25 @@ export const ScanningGuide = ({
   return (
     <div className={`scanning-guide ${className}`}>
       <article>
-        <Heading size={"small"} level={"3"} spacing>
+        <Label as="p" spacing>
           {tekster?.alert?.takePictureTitle}
-        </Heading>
+        </Label>
         <ul>
           <li>{tekster?.alert?.bulletPointTakePicture1}</li>
           <li>{tekster?.alert?.bulletPointTakePicture2}</li>
           <li>{tekster?.alert?.bulletPointTakePicture3}</li>
         </ul>
-        <Heading size={"small"} level={"3"} spacing>
+        <Label as="p" spacing>
           {tekster?.alert?.checkPictureTitle}
-        </Heading>
+        </Label>
         <ul>
           <li>{tekster?.alert?.bulletPointCheckPicture1}</li>
           <li>{tekster?.alert?.bulletPointCheckPicture2}</li>
           <li>{tekster?.alert?.bulletPointCheckPicture3}</li>
         </ul>
-        <Heading size={"small"} level={"3"} spacing>
+        <Label as="p" spacing>
           {tekster?.alert?.examplesPicturesTitle}
-        </Heading>
+        </Label>
       </article>
       <ul className={"scanning-examples"}>
         <li className={"scanning-example"}>
@@ -54,7 +54,7 @@ export const ScanningGuide = ({
           <div className="scanning-example-item">
             <span className={"scanning-example-status"}>
               <Success color={"var(--a-green-600)"} />
-              <Label>{tekster?.alert?.exampleLabelGood}</Label>
+              <Label as="span">{tekster?.alert?.exampleLabelGood}</Label>
             </span>
             <BodyShort>{tekster?.alert?.exampleGood}</BodyShort>
           </div>
@@ -67,7 +67,7 @@ export const ScanningGuide = ({
           <div className="scanning-example-item">
             <span className={"scanning-example-status"}>
               <Error color={"var(--a-nav-red)"} />
-              <Label>{tekster?.alert?.exampleLabelBad}</Label>
+              <Label as="span">{tekster?.alert?.exampleLabelBad}</Label>
             </span>
             <BodyShort>{tekster?.alert?.exampleKeystone}</BodyShort>
           </div>
@@ -80,7 +80,7 @@ export const ScanningGuide = ({
           <div className="scanning-example-item">
             <span className={"scanning-example-status"}>
               <Error color={"var(--a-nav-red)"} />
-              <Label>{tekster?.alert?.exampleLabelBad}</Label>
+              <Label as="span">{tekster?.alert?.exampleLabelBad}</Label>
             </span>
             <BodyShort>{tekster?.alert?.exampleHorizontal}</BodyShort>
           </div>
@@ -93,7 +93,7 @@ export const ScanningGuide = ({
           <div className="scanning-example-item">
             <span className={"scanning-example-status"}>
               <Error color={"var(--a-nav-red)"} />
-              <Label>{tekster?.alert?.exampleLabelBad}</Label>
+              <Label as="span">{tekster?.alert?.exampleLabelBad}</Label>
             </span>
             <BodyShort>{tekster?.alert?.exampleShaddow}</BodyShort>
           </div>
