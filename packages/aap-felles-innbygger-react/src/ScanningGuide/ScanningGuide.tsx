@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { BodyShort, Heading, Label } from "@navikt/ds-react";
+import { BodyShort, Label } from "@navikt/ds-react";
 import ScanningIcon from "./ScanningIcon";
 import { Error, Success } from "@navikt/ds-icons";
 import nn from "./nn";
