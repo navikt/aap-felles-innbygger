@@ -1,12 +1,14 @@
-import { NextPageContext, GetServerSidePropsResult } from 'next';
-import { getAccessToken } from '../lib/accessToken';
-import { verifyIdportenAccessToken } from '../lib/verifyIdPortenAccessToken';
+import { NextPageContext, GetServerSidePropsResult } from "next";
+import { getAccessToken } from "../lib/accessToken";
+import { verifyIdportenAccessToken } from "../lib/verifyIdPortenAccessToken";
 
-type PageHandler = (context: NextPageContext) => void | Promise<GetServerSidePropsResult<{}>>;
+type PageHandler = (
+  context: NextPageContext
+) => void | Promise<GetServerSidePropsResult<{}>>;
 
 const wonderwallRedirect = {
   redirect: {
-    destination: '/oauth2/login?redirect=/aap/innsyn',
+    destination: process.env.WONDERWALL_REDIRECT_DESTINATION ?? "",
     permanent: false,
   },
 };
@@ -15,7 +17,11 @@ export function beskyttetSide(handler: PageHandler) {
   return async function withBearerTokenHandler(
     context: NextPageContext
   ): Promise<ReturnType<typeof handler>> {
-
+    if (!process.env.WONDERWALL_REDIRECT_DESTINATION) {
+      throw new TypeError(
+        'Miljøvariabelen "WONDERWALL_REDIRECT_DESTINATION må være satt'
+      );
+    }
     const bearerToken = getAccessToken(context);
 
     if (!bearerToken) {
@@ -25,17 +31,17 @@ export function beskyttetSide(handler: PageHandler) {
     try {
       await verifyIdportenAccessToken(bearerToken);
     } catch (e) {
-      console.log('kunne ikke validere idportentoken i beskyttetSide', e);
+      console.log("kunne ikke validere idportentoken i beskyttetSide", e);
       return wonderwallRedirect;
     }
     return handler(context);
   };
 }
 
-export const beskyttetSideUtenProps = beskyttetSide(
-  async (): Promise<GetServerSidePropsResult<{}>> => {
-    return {
-      props: {},
-    };
-  }
-);
+export const beskyttetSideUtenProps = beskyttetSide(async (): Promise<
+  GetServerSidePropsResult<{}>
+> => {
+  return {
+    props: {},
+  };
+});
