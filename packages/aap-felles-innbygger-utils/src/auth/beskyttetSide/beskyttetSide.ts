@@ -1,5 +1,6 @@
 import { NextPageContext, GetServerSidePropsResult } from "next";
 import { getAccessToken } from "../lib/accessToken";
+import { isMock } from "../../environments";
 import { verifyIdportenAccessToken } from "../lib/verifyIdPortenAccessToken";
 
 type PageHandler = (
@@ -17,6 +18,10 @@ export function beskyttetSide(handler: PageHandler) {
   return async function withBearerTokenHandler(
     context: NextPageContext
   ): Promise<ReturnType<typeof handler>> {
+    if (isMock()) {
+      return handler(context);
+    }
+
     if (!process.env.WONDERWALL_REDIRECT_DESTINATION) {
       throw new TypeError(
         'Miljøvariabelen "WONDERWALL_REDIRECT_DESTINATION må være satt'
