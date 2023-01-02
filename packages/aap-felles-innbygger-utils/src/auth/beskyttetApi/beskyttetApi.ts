@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ErrorMedStatus } from "../lib/ErrorMedStatus";
 import { verifyIdportenAccessToken } from "../lib/verifyIdPortenAccessToken";
+import { isMock } from "../../environments";
 
 type ApiHandler = (
   req: NextApiRequest,
@@ -17,6 +18,9 @@ export function beskyttetApi(handler: ApiHandler): ApiHandler {
     }
 
     try {
+      if (isMock()) {
+        return handler(req, res);
+      }
       const bearerToken: string | null | undefined =
         req.headers["authorization"];
       if (!bearerToken) {
