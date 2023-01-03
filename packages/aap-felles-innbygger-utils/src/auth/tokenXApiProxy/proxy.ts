@@ -6,6 +6,7 @@ import { ErrorMedStatus } from "../lib/ErrorMedStatus";
 import { Counter, Histogram } from "prom-client";
 import pino from "pino";
 import Logger = pino.Logger;
+import { logger } from "../../logger";
 
 const NAV_CALLID = "Nav-CallId";
 interface ErrorLog {
@@ -28,18 +29,18 @@ interface Opts {
   bearerToken?: string;
   metricsTimer?: Histogram;
   metricsStatusCodeCounter?: Counter;
-  logger: Logger<unknown>;
+  logger?: Logger<unknown>;
 }
 
 export const tokenXApiProxy = async (opts: Opts) => {
-  opts.logger.info("starter request mot " + opts.url);
+  logger.info("starter request mot " + opts.url);
 
   const idportenToken = opts.bearerToken!.split(" ")[1];
   let tokenxToken;
   try {
     tokenxToken = await getTokenX(idportenToken, opts.audience);
   } catch (err: any) {
-    opts.logger.error({ msg: "getTokenXError", error: err });
+    logger.error({ msg: "getTokenXError", error: err });
   }
 
   const stopTimer = opts.metricsTimer
@@ -75,7 +76,7 @@ export const tokenXApiProxy = async (opts: Opts) => {
         message: `unable to parse data from ${opts.url}`,
         error: err.toString(),
       };
-      opts.logger.error(parseError);
+      logger.error(parseError);
     }
     const responseErrorLog: ErrorLog = {
       message: `tokenXProxy: status for ${opts.url} er ${response.status}: ${response.statusText}.`,
@@ -83,9 +84,9 @@ export const tokenXApiProxy = async (opts: Opts) => {
       data,
     };
     if (response.status >= 500 || response.status === 400) {
-      opts.logger.error(responseErrorLog);
+      logger.error(responseErrorLog);
     } else if (response.status !== 404) {
-      opts.logger.warn(responseErrorLog);
+      logger.warn(responseErrorLog);
     }
     throw new ErrorMedStatus(
       `tokenXProxy: status for ${opts.url} er ${response.status}.`,
@@ -93,7 +94,7 @@ export const tokenXApiProxy = async (opts: Opts) => {
       data?.[NAV_CALLID]
     );
   }
-  opts.logger.info(
+  logger.info(
     `Vellyket tokenXProxy-request mot ${opts.url}. Status: ${response.status}`
   );
   if (opts.noResponse) {
@@ -114,17 +115,15 @@ interface AxiosOpts {
   bearerToken?: string;
   metricsTimer?: Histogram;
   metricsStatusCodeCounter?: Counter;
-  logger: Logger<unknown>;
+  logger?: Logger<unknown>;
 }
 
 export const tokenXApiStreamProxy = async (opts: AxiosOpts) => {
   const idportenToken = opts.bearerToken!.split(" ")[1];
   const tokenxToken = await getTokenX(idportenToken, opts.audience);
 
-  opts.logger.info("Starter opplasting av fil til " + opts.url);
-  opts.logger.info(
-    "content-type fra klient" + opts.req?.headers["content-type"]
-  );
+  logger.info("Starter opplasting av fil til " + opts.url);
+  logger.info("content-type fra klient" + opts.req?.headers["content-type"]);
   const requestId = randomUUID();
   try {
     const stopTimer = opts.metricsTimer
@@ -144,7 +143,7 @@ export const tokenXApiStreamProxy = async (opts: AxiosOpts) => {
         path: opts.prometheusPath,
         status: data.status,
       });
-    opts.logger.info("Vellykket opplasting av fil til " + opts.url);
+    logger.info("Vellykket opplasting av fil til " + opts.url);
     return data.pipe(opts.res);
   } catch (e: any) {
     if (e?.response?.status) {
@@ -156,7 +155,7 @@ export const tokenXApiStreamProxy = async (opts: AxiosOpts) => {
         });
       return opts.res.status(e.response.status);
     }
-    opts.logger.error({
+    logger.error({
       msg: "tokenXAxioserror",
       error: e.toString(),
       navCallId: e?.request?.headers?.[NAV_CALLID],

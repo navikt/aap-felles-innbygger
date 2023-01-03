@@ -2,6 +2,7 @@ import { NextPageContext, GetServerSidePropsResult } from "next";
 import { getAccessToken } from "../lib/accessToken";
 import { isMock } from "../../environments";
 import { verifyIdportenAccessToken } from "../lib/verifyIdPortenAccessToken";
+import { logger } from "../../logger";
 
 type PageHandler = (
   context: NextPageContext
@@ -36,7 +37,10 @@ export function beskyttetSide(handler: PageHandler) {
     try {
       await verifyIdportenAccessToken(bearerToken);
     } catch (e) {
-      console.log("kunne ikke validere idportentoken i beskyttetSide", e);
+      logger.warn({
+        message: "kunne ikke validere idportentoken i beskyttetSide",
+        error: e?.toString(),
+      });
       return wonderwallRedirect;
     }
     return handler(context);
