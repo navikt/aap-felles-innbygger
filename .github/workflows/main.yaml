@@ -1,4 +1,4 @@
-name: "Build and deploy aap-soknad-next"
+name: "Build and publish common libs"
 on:
   workflow_dispatch:
   push:
@@ -20,6 +20,8 @@ jobs:
         run: "npm ci"
         env:
           NODE_AUTH_TOKEN: "${{ secrets.READER_TOKEN }}"
+      - name: "test packages"
+        run: "npm run test"
       - name: "build packages"
         run: "npm run build"
       - name: "build storybook"
