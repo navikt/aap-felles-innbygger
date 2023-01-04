@@ -1,5 +1,5 @@
 import { Client, errors, GrantBody, Issuer } from "openid-client";
-import { logger } from "../../logger";
+import { logger } from "../../../logger";
 
 const OPError = errors.OPError;
 

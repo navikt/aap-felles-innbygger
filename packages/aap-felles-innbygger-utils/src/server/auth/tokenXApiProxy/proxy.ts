@@ -6,7 +6,7 @@ import { ErrorMedStatus } from "../lib/ErrorMedStatus";
 import { Counter, Histogram } from "prom-client";
 import pino from "pino";
 import Logger = pino.Logger;
-import { logger } from "../../logger";
+import { logger } from "../../../logger";
 
 const NAV_CALLID = "Nav-CallId";
 interface ErrorLog {

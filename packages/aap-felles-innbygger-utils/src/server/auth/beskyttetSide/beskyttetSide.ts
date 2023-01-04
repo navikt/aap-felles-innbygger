@@ -1,8 +1,8 @@
 import { NextPageContext, GetServerSidePropsResult } from "next";
 import { getAccessToken } from "../lib/accessToken";
-import { isMock } from "../../environments";
+import { isMock } from "../../../environments";
 import { verifyIdportenAccessToken } from "../lib/verifyIdPortenAccessToken";
-import { logger } from "../../logger";
+import { logger } from "../../../logger";
 
 type PageHandler = (
   context: NextPageContext

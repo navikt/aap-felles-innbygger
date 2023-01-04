@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ErrorMedStatus } from "../lib/ErrorMedStatus";
 import { verifyIdportenAccessToken } from "../lib/verifyIdPortenAccessToken";
-import { isMock } from "../../environments";
-import { logger } from "../../logger";
+import { isMock } from "../../../environments";
+import { logger } from "../../../logger";
 
 type ApiHandler = (
   req: NextApiRequest,
