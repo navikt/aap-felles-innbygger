@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "outDir": "./cjs",
+    "module": "commonjs",
+    "noImplicitAny": false
+  },
+  "exclude": ["node_modules", "cjs", "esm", "**/*.stories.tsx"]
+}
