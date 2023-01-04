@@ -21,7 +21,6 @@
     "/src"
   ],
   "scripts": {
-    "test": "jest",
     "build": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
     "clean": "rm -rf ./cjs ./esm"
   },
