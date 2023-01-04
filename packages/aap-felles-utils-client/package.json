@@ -1,5 +1,5 @@
 {
-  "version": "0.0.46",
+  "version": "0.0.48",
   "name": "@navikt/aap-felles-utils-client",
   "author": "NAV",
   "homepage": "https://github.com/navikt/aap-felles-innbygger#readme",
@@ -25,7 +25,6 @@
     "build": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
     "clean": "rm -rf ./cjs ./esm"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^29.2.5",
     "jest": "^29.3.1",
