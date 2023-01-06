@@ -30,7 +30,7 @@
     "jose": "^4.11.1",
     "next": "^12.3.4",
     "openid-client": "^5.3.1",
-    "pino": "8.6.1",
+    "pino": "^8.8.0",
     "prom-client": "^14.1.0"
   },
   "devDependencies": {
